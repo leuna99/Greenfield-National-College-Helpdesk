@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        {% block title %}
+        Greenfield National College
+        {% endblock %}
+    </title>
+
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<!-- TOP BAR -->
+
+<div class="top-bar">
+
+    <div class="top-bar-container">
+
+        <span>
+            🎓 Greenfield National College
+        </span>
+
+        <div class="top-links">
+
+            <span>
+                📍 Kathmandu, Nepal
+            </span>
+
+            <span>
+                🎓 BCA Student Helpdesk
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- HEADER -->
+
+<header class="main-header">
+
+    <div class="header-container">
+
+
+        <a href="{{ url_for('home') }}"
+           class="logo-area">
+
+            <div class="logo">
+                🎓
+            </div>
+
+            <div class="logo-text">
+
+                <h2>
+                    GREENFIELD
+                </h2>
+
+                <span>
+                    NATIONAL COLLEGE
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <nav class="navbar">
+
+            <a href="{{ url_for('home') }}">
+                Home
+            </a>
+
+            <a href="{{ url_for('syllabus') }}">
+                BCA Syllabus
+            </a>
+
+
+            {% if session.get("user_id") %}
+
+                <a href="{{ url_for('chat') }}">
+                    🤖 Chatbot
+                </a>
+
+                <a href="{{ url_for('tickets') }}">
+                    🎫 Helpdesk
+                </a>
+
+                <a href="{{ url_for('logout') }}">
+                    Logout
+                </a>
+
+            {% else %}
+
+                <a href="{{ url_for('login') }}"
+                   class="login-nav">
+                    🎓 Student Login
+                </a>
+
+            {% endif %}
+
+
+            {% if session.get("admin_id") %}
+
+                <a href="{{ url_for('admin_dashboard') }}">
+                    📊 Dashboard
+                </a>
+
+                <a href="{{ url_for('admin_faqs') }}">
+                    ❓ FAQs
+                </a>
+
+                <a href="{{ url_for('analytics') }}">
+                    📈 Analytics
+                </a>
+
+                <a href="{{ url_for('admin_logout') }}">
+                    Admin Logout
+                </a>
+
+            {% else %}
+
+                <a href="{{ url_for('admin_login') }}">
+                    🔐 Admin
+                </a>
+
+            {% endif %}
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- FLASH MESSAGE -->
+
+{% with messages = get_flashed_messages() %}
+
+    {% if messages %}
+
+        {% for message in messages %}
+
+            <div class="flash">
+                {{ message }}
+            </div>
+
+        {% endfor %}
+
+    {% endif %}
+
+{% endwith %}
+
+
+<!-- MAIN CONTENT -->
+
+<main>
+
+    {% block content %}
+    {% endblock %}
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer class="site-footer">
+
+    <div class="footer-main">
+
+
+        <div class="footer-column">
+
+            <h3>
+                🎓 Greenfield National College
+            </h3>
+
+            <p>
+                Student Helpdesk Chatbot System.
+            </p>
+
+            <p>
+                A digital platform designed to provide
+                students with quick access to college
+                information and support services.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <a href="{{ url_for('home') }}">
+                Home
+            </a>
+
+            <a href="{{ url_for('syllabus') }}">
+                BCA Syllabus
+            </a>
+
+            <a href="{{ url_for('login') }}">
+                Student Login
+            </a>
+
+            <a href="{{ url_for('admin_login') }}">
+                Admin Login
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                BCA Information
+            </h3>
+
+            <p>📚 4 Years</p>
+
+            <p>📖 8 Semesters</p>
+
+            <p>⏳ 6 Months / Semester</p>
+
+            <p>💰 Rs. 50,000 / Semester</p>
+
+            <p>💵 Rs. 400,000 Total</p>
+
+            <p>
+                📍 Bafal, Chetan Marga,
+                Kathmandu, Nepal
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Greenfield National College
+        Student Helpdesk Chatbot System
+
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>

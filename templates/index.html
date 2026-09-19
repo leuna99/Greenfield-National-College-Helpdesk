@@ -1,0 +1,462 @@
+{% extends "base.html" %}
+
+{% block title %}
+Greenfield National College | Student Helpdesk
+{% endblock %}
+
+
+{% block content %}
+
+<section class="home-hero">
+
+    <div class="home-hero-overlay">
+
+        <div class="home-hero-content">
+
+            <span class="hero-label">
+                STUDENT HELP DESK
+            </span>
+
+            <h1>
+                Welcome to
+                <br>
+                <span>Greenfield National College</span>
+            </h1>
+
+            <p>
+                Your digital student support system for
+                college information, BCA course details,
+                chatbot assistance and helpdesk services.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="{{ url_for('login') }}"
+                   class="gold-button">
+                    🎓 Student Login
+                </a>
+
+                <a href="{{ url_for('syllabus') }}"
+                   class="outline-button">
+                    📚 Explore BCA Syllabus
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="welcome-section">
+
+    <div class="section-container">
+
+        <div class="section-heading">
+
+            <span>
+                WELCOME
+            </span>
+
+            <h2>
+                Student Support Made Simple
+            </h2>
+
+            <div class="heading-line"></div>
+
+        </div>
+
+        <p class="welcome-text">
+
+            The Greenfield National College Student Helpdesk
+            Chatbot System helps students quickly access
+            college information, BCA course details,
+            semester information and student support.
+
+            Students can ask the chatbot questions or
+            create a helpdesk ticket when they need
+            administrative assistance.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="services-section">
+
+    <div class="section-container">
+
+        <div class="section-heading">
+
+            <span>
+                OUR SERVICES
+            </span>
+
+            <h2>
+                How Can We Help You?
+            </h2>
+
+            <div class="heading-line"></div>
+
+        </div>
+
+
+        <div class="service-grid">
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🤖
+                </div>
+
+                <h3>
+                    Student Chatbot
+                </h3>
+
+                <p>
+                    Ask questions about BCA fees,
+                    semesters, exams, assignments,
+                    attendance and college information.
+                </p>
+
+                <a href="{{ url_for('login') }}">
+                    Ask the Chatbot →
+                </a>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🎫
+                </div>
+
+                <h3>
+                    Helpdesk Tickets
+                </h3>
+
+                <p>
+                    Submit a support ticket when your
+                    problem requires help from the
+                    college administration.
+                </p>
+
+                <a href="{{ url_for('login') }}">
+                    Create Ticket →
+                </a>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    📚
+                </div>
+
+                <h3>
+                    BCA Syllabus
+                </h3>
+
+                <p>
+                    Explore the BCA course structure,
+                    semesters, subjects and unit
+                    information.
+                </p>
+
+                <a href="{{ url_for('syllabus') }}">
+                    View Syllabus →
+                </a>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🎓
+                </div>
+
+                <h3>
+                    College Information
+                </h3>
+
+                <p>
+                    Find information about BCA duration,
+                    semester fees, course structure and
+                    college location.
+                </p>
+
+                <a href="#college-info">
+                    Learn More →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="college-info-section"
+         id="college-info">
+
+    <div class="college-info-grid">
+
+
+        <div class="college-info-text">
+
+            <span class="small-title">
+                BCA PROGRAM
+            </span>
+
+            <h2>
+                Bachelor of Computer Applications
+            </h2>
+
+            <p>
+                BCA is a 4-year undergraduate program
+                consisting of 8 semesters.
+            </p>
+
+            <p>
+                Each semester is approximately 6 months.
+                The semester fee is Rs. 50,000.
+            </p>
+
+            <p>
+                The total fee for 8 semesters is
+                Rs. 400,000.
+            </p>
+
+
+            <div class="button-group">
+
+                <a href="{{ url_for('syllabus') }}"
+                   class="dark-button">
+                    📚 View Complete BCA Syllabus
+                </a>
+
+                <a href="{{ url_for('login') }}"
+                   class="gold-button">
+                    🎓 Access Student Helpdesk
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="college-facts">
+
+            <div class="fact">
+
+                <strong>
+                    4 Years
+                </strong>
+
+                <span>
+                    Course Duration
+                </span>
+
+            </div>
+
+
+            <div class="fact">
+
+                <strong>
+                    8 Semesters
+                </strong>
+
+                <span>
+                    Course Structure
+                </span>
+
+            </div>
+
+
+            <div class="fact">
+
+                <strong>
+                    6 Months
+                </strong>
+
+                <span>
+                    Per Semester
+                </span>
+
+            </div>
+
+
+            <div class="fact">
+
+                <strong>
+                    Rs. 50,000
+                </strong>
+
+                <span>
+                    Fee Per Semester
+                </span>
+
+            </div>
+
+
+            <div class="fact">
+
+                <strong>
+                    Rs. 400,000
+                </strong>
+
+                <span>
+                    Total Course Fee
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="welcome-section">
+
+    <div class="section-container">
+
+        <div class="section-heading">
+
+            <span>
+                COURSE STRUCTURE
+            </span>
+
+            <h2>
+                BCA — 8 Semesters
+            </h2>
+
+            <div class="heading-line"></div>
+
+        </div>
+
+
+        <div class="semester-mini-grid">
+
+            <div class="mini-semester">
+                <span>01</span>
+                <strong>First Semester</strong>
+            </div>
+
+            <div class="mini-semester">
+                <span>02</span>
+                <strong>Second Semester</strong>
+            </div>
+
+            <div class="mini-semester">
+                <span>03</span>
+                <strong>Third Semester</strong>
+            </div>
+
+            <div class="mini-semester">
+                <span>04</span>
+                <strong>Fourth Semester</strong>
+            </div>
+
+            <div class="mini-semester">
+                <span>05</span>
+                <strong>Fifth Semester</strong>
+            </div>
+
+            <div class="mini-semester">
+                <span>06</span>
+                <strong>Sixth Semester</strong>
+            </div>
+
+            <div class="mini-semester">
+                <span>07</span>
+                <strong>Seventh Semester</strong>
+            </div>
+
+            <div class="mini-semester">
+                <span>08</span>
+                <strong>Eighth Semester</strong>
+            </div>
+
+        </div>
+
+
+        <div style="text-align:center; margin-top:35px;">
+
+            <a href="{{ url_for('syllabus') }}"
+               class="gold-button">
+
+                📖 Explore Complete BCA Course Structure
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="location-section">
+
+    <div class="location-box">
+
+        <div class="location-icon">
+            📍
+        </div>
+
+        <div>
+
+            <span class="small-title">
+                OUR LOCATION
+            </span>
+
+            <h2>
+                Greenfield National College
+            </h2>
+
+            <p>
+                Bafal, Chetan Marga,
+                Kathmandu, Nepal
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="final-cta">
+
+    <h2>
+        Need Help?
+    </h2>
+
+    <p>
+        Login to the Student Helpdesk and get
+        assistance whenever you need it.
+    </p>
+
+    <a href="{{ url_for('login') }}"
+       class="gold-button">
+
+        🎓 Login to Student Helpdesk
+
+    </a>
+
+</section>
+
+
+{% endblock %}

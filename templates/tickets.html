@@ -1,0 +1,668 @@
+{% extends "base.html" %}
+
+{% block title %}
+Helpdesk Tickets | Greenfield National College
+{% endblock %}
+
+{% block content %}
+
+<style>
+    /* ================================
+       HELPDESK PAGE
+       ================================ */
+
+    .tickets-page {
+        min-height: calc(100vh - 90px);
+        padding: 45px 20px 70px;
+
+        background-image:
+            linear-gradient(
+                rgba(10, 38, 68, 0.68),
+                rgba(10, 38, 68, 0.78)
+            ),
+            url("{{ url_for('static', filename='aaa.jpg') }}");
+
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+
+    /* ================================
+       PAGE TITLE
+       ================================ */
+
+    .tickets-page .page-title {
+        max-width: 1100px;
+        margin: 0 auto 35px;
+        color: white;
+    }
+
+    .tickets-page .page-title span {
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        margin-bottom: 8px;
+        color: #f5c542;
+    }
+
+    .tickets-page .page-title h1 {
+        margin: 0 0 8px;
+        font-size: 38px;
+        font-weight: 700;
+    }
+
+    .tickets-page .page-title p {
+        margin: 0;
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+
+    /* ================================
+       TICKET GRID
+       ================================ */
+
+    .ticket-grid {
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+        align-items: start;
+    }
+
+
+    /* ================================
+       PANELS
+       ================================ */
+
+    .ticket-grid .panel {
+        background: rgba(255, 255, 255, 0.97);
+        border-radius: 18px;
+        padding: 30px;
+
+        box-shadow:
+            0 18px 45px rgba(0, 0, 0, 0.22);
+
+        border: 1px solid rgba(255, 255, 255, 0.7);
+    }
+
+    .ticket-grid .panel h2 {
+        margin: 0 0 10px;
+
+        color: #173f67;
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    .panel-description {
+        margin: 0 0 25px;
+        color: #64748b;
+        line-height: 1.6;
+        font-size: 14px;
+    }
+
+
+    /* ================================
+       FORM
+       ================================ */
+
+    .professional-form-group {
+        margin-bottom: 22px;
+    }
+
+    .professional-form-group label {
+        display: block;
+        margin-bottom: 8px;
+
+        font-size: 14px;
+        font-weight: 600;
+        color: #26384d;
+    }
+
+    .professional-form-group input,
+    .professional-form-group textarea {
+        width: 100%;
+        box-sizing: border-box;
+
+        padding: 13px 15px;
+
+        border: 1px solid #d5dce5;
+        border-radius: 10px;
+
+        background: #ffffff;
+        color: #26384d;
+
+        font-size: 14px;
+        font-family: inherit;
+
+        outline: none;
+
+        transition:
+            border-color 0.2s ease,
+            box-shadow 0.2s ease;
+    }
+
+    .professional-form-group input {
+        height: 50px;
+    }
+
+    .professional-form-group textarea {
+        resize: vertical;
+        min-height: 150px;
+    }
+
+    .professional-form-group input::placeholder,
+    .professional-form-group textarea::placeholder {
+        color: #9aa8b8;
+    }
+
+    .professional-form-group input:focus,
+    .professional-form-group textarea:focus {
+        border-color: #1f5f95;
+
+        box-shadow:
+            0 0 0 3px rgba(31, 95, 149, 0.12);
+    }
+
+
+    /* ================================
+       GOLD BUTTON
+       ================================ */
+
+    .gold-button {
+        width: 100%;
+        border: none;
+
+        padding: 14px 20px;
+
+        border-radius: 10px;
+
+        background: linear-gradient(
+            135deg,
+            #d6a72c,
+            #f0c44c
+        );
+
+        color: #173f67;
+
+        font-size: 15px;
+        font-weight: 700;
+
+        cursor: pointer;
+
+        transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+    }
+
+    .gold-button:hover {
+        transform: translateY(-2px);
+
+        box-shadow:
+            0 8px 20px rgba(214, 167, 44, 0.30);
+    }
+
+
+    /* ================================
+       STUDENT TICKET LIST
+       ================================ */
+
+    .student-ticket-list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        max-height: 650px;
+        overflow-y: auto;
+        padding-right: 5px;
+    }
+
+    .student-ticket-list::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .student-ticket-list::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 10px;
+    }
+
+
+    /* ================================
+       TICKET CARD
+       ================================ */
+
+    .student-ticket-card {
+        padding: 18px;
+
+        border: 1px solid #e2e8f0;
+        border-radius: 14px;
+
+        background: #f8fafc;
+
+        transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+    }
+
+    .student-ticket-card:hover {
+        transform: translateY(-2px);
+
+        box-shadow:
+            0 8px 20px rgba(15, 23, 42, 0.08);
+    }
+
+
+    /* ================================
+       TICKET TOP
+       ================================ */
+
+    .ticket-card-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        margin-bottom: 12px;
+    }
+
+    .ticket-card-top strong {
+        color: #173f67;
+        font-size: 14px;
+    }
+
+
+    /* ================================
+       STATUS
+       ================================ */
+
+    .status {
+        display: inline-flex;
+        align-items: center;
+
+        padding: 5px 10px;
+
+        border-radius: 20px;
+
+        font-size: 12px;
+        font-weight: 700;
+    }
+
+    .status-open {
+        background: #dcfce7;
+        color: #15803d;
+    }
+
+    .status-closed {
+        background: #e2e8f0;
+        color: #475569;
+    }
+
+
+    /* ================================
+       TICKET CONTENT
+       ================================ */
+
+    .student-ticket-card h3 {
+        margin: 0 0 8px;
+
+        color: #243b53;
+
+        font-size: 17px;
+        font-weight: 700;
+    }
+
+    .student-ticket-card > p {
+        margin: 0 0 15px;
+
+        color: #64748b;
+
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+
+    /* ================================
+       ADMIN REPLY
+       ================================ */
+
+    .admin-reply {
+        margin-top: 15px;
+        padding: 14px;
+
+        border-left: 4px solid #1f5f95;
+        border-radius: 8px;
+
+        background: #eaf3fb;
+    }
+
+    .admin-reply strong {
+        display: block;
+
+        margin-bottom: 6px;
+
+        color: #174a75;
+        font-size: 13px;
+    }
+
+    .admin-reply p {
+        margin: 0;
+
+        color: #475569;
+
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+
+    /* ================================
+       WAITING FOR REPLY
+       ================================ */
+
+    .waiting-reply {
+        margin-top: 15px;
+        padding: 11px 13px;
+
+        border-radius: 8px;
+
+        background: #fff7ed;
+        color: #c2410c;
+
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+
+    /* ================================
+       DATE
+       ================================ */
+
+    .student-ticket-card small {
+        display: block;
+
+        margin-top: 14px;
+
+        color: #94a3b8;
+
+        font-size: 11px;
+    }
+
+
+    /* ================================
+       EMPTY STATE
+       ================================ */
+
+    .empty-state {
+        text-align: center;
+
+        padding: 50px 20px;
+
+        border: 2px dashed #dbe3ec;
+        border-radius: 14px;
+
+        background: #f8fafc;
+    }
+
+    .empty-state > div {
+        font-size: 42px;
+        margin-bottom: 12px;
+    }
+
+    .empty-state h3 {
+        margin: 0 0 8px;
+
+        color: #243b53;
+        font-size: 19px;
+    }
+
+    .empty-state p {
+        margin: 0;
+
+        color: #64748b;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+
+    /* ================================
+       MOBILE RESPONSIVE
+       ================================ */
+
+    @media (max-width: 850px) {
+
+        .ticket-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .tickets-page .page-title h1 {
+            font-size: 32px;
+        }
+    }
+
+
+    @media (max-width: 600px) {
+
+        .tickets-page {
+            padding: 30px 15px 50px;
+            background-attachment: scroll;
+        }
+
+        .tickets-page .page-title h1 {
+            font-size: 28px;
+        }
+
+        .ticket-grid .panel {
+            padding: 22px;
+        }
+
+        .ticket-grid .panel h2 {
+            font-size: 21px;
+        }
+
+        .student-ticket-card {
+            padding: 15px;
+        }
+    }
+</style>
+
+
+<section class="tickets-page">
+
+    <!-- PAGE TITLE -->
+    <div class="page-title">
+
+        <span>
+            STUDENT SUPPORT
+        </span>
+
+        <h1>
+            Helpdesk Tickets
+        </h1>
+
+        <p>
+            Submit a problem or request and track
+            your support ticket.
+        </p>
+
+    </div>
+
+
+    <!-- TICKET GRID -->
+    <div class="ticket-grid">
+
+
+        <!-- CREATE TICKET -->
+        <div class="panel">
+
+            <h2>
+                🎫 Create New Ticket
+            </h2>
+
+            <p class="panel-description">
+                Describe your problem clearly so that
+                the administration can assist you.
+            </p>
+
+
+            <form method="POST">
+
+                <div class="professional-form-group">
+
+                    <label>
+                        Subject
+                    </label>
+
+                    <input
+                        type="text"
+                        name="subject"
+                        placeholder="Enter ticket subject"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="professional-form-group">
+
+                    <label>
+                        Description
+                    </label>
+
+                    <textarea
+                        name="description"
+                        rows="7"
+                        placeholder="Describe your problem or request..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="gold-button"
+                >
+                    🎫 Submit Ticket
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <!-- TICKET LIST -->
+        <div class="panel">
+
+            <h2>
+                📋 My Tickets
+            </h2>
+
+
+            {% if tickets %}
+
+                <div class="student-ticket-list">
+
+                    {% for ticket in tickets %}
+
+                        <div class="student-ticket-card">
+
+                            <div class="ticket-card-top">
+
+                                <strong>
+                                    #{{ ticket["id"] }}
+                                </strong>
+
+
+                                {% if ticket["status"] == "Open" %}
+
+                                    <span class="status status-open">
+                                        Open
+                                    </span>
+
+                                {% else %}
+
+                                    <span class="status status-closed">
+                                        Closed
+                                    </span>
+
+                                {% endif %}
+
+                            </div>
+
+
+                            <h3>
+                                {{ ticket["subject"] }}
+                            </h3>
+
+
+                            <p>
+                                {{ ticket["description"] }}
+                            </p>
+
+
+                            {% if ticket["reply"] %}
+
+                                <div class="admin-reply">
+
+                                    <strong>
+                                        👨‍💼 Admin Reply
+                                    </strong>
+
+                                    <p>
+                                        {{ ticket["reply"] }}
+                                    </p>
+
+                                </div>
+
+                            {% else %}
+
+                                <div class="waiting-reply">
+                                    ⏳ Waiting for admin response
+                                </div>
+
+                            {% endif %}
+
+
+                            <small>
+                                Submitted:
+                                {{ ticket["created_at"] }}
+                            </small>
+
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+            {% else %}
+
+                <div class="empty-state">
+
+                    <div>
+                        🎫
+                    </div>
+
+                    <h3>
+                        No tickets yet
+                    </h3>
+
+                    <p>
+                        Your submitted helpdesk tickets
+                        will appear here.
+                    </p>
+
+                </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

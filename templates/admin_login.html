@@ -1,0 +1,679 @@
+{% extends "base.html" %}
+
+{% block title %}
+Admin Login | Greenfield National College
+{% endblock %}
+
+{% block content %}
+
+<style>
+
+/* =========================================================
+   ADMIN LOGIN PAGE
+   ========================================================= */
+
+.admin-login-page {
+
+    min-height: calc(100vh - 90px);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 60px 20px;
+
+    position: relative;
+
+    background-image:
+        linear-gradient(
+            rgba(8, 35, 65, 0.78),
+            rgba(8, 35, 65, 0.86)
+        ),
+        url("{{ url_for('static', filename='bbbb.jpg') }}");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    background-attachment: fixed;
+
+}
+
+
+/* =========================================================
+   LOGIN CARD
+   ========================================================= */
+
+.admin-login-card {
+
+    width: 100%;
+
+    max-width: 470px;
+
+    padding: 45px 42px;
+
+    box-sizing: border-box;
+
+    background: rgba(255, 255, 255, 0.98);
+
+    border-radius: 20px;
+
+    border: 1px solid rgba(255, 255, 255, 0.9);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.30);
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+/* =========================================================
+   TOP DECORATION
+   ========================================================= */
+
+.admin-login-top-line {
+
+    width: 55px;
+
+    height: 4px;
+
+    margin: 0 auto 22px;
+
+    border-radius: 10px;
+
+    background: #d6a033;
+
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.admin-login-header {
+
+    text-align: center;
+
+}
+
+
+.admin-icon {
+
+    width: 62px;
+
+    height: 62px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #123d69,
+            #23659c
+        );
+
+    color: white;
+
+    font-size: 26px;
+
+    box-shadow:
+        0 8px 20px rgba(18, 61, 105, 0.25);
+
+}
+
+
+.college-label {
+
+    color: #b78325;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 9px;
+
+}
+
+
+.admin-login-card h1 {
+
+    margin: 0;
+
+    color: #123d69;
+
+    font-size: 34px;
+
+    font-weight: 750;
+
+}
+
+
+.login-description {
+
+    margin: 12px 0 32px;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.admin-form-group {
+
+    margin-bottom: 21px;
+
+}
+
+
+.admin-form-group label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #334155;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+}
+
+
+.admin-input-wrapper {
+
+    position: relative;
+
+}
+
+
+.admin-input-icon {
+
+    position: absolute;
+
+    left: 15px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    font-size: 17px;
+
+    z-index: 2;
+
+}
+
+
+.admin-form-group input {
+
+    width: 100%;
+
+    height: 52px;
+
+    box-sizing: border-box;
+
+    padding: 0 48px 0 45px;
+
+    border: 1px solid #d0d7e2;
+
+    border-radius: 10px;
+
+    background: #f8fafc;
+
+    color: #1e293b;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: all 0.2s ease;
+
+}
+
+
+.admin-form-group input::placeholder {
+
+    color: #94a3b8;
+
+}
+
+
+.admin-form-group input:focus {
+
+    background: white;
+
+    border-color: #2563a6;
+
+    box-shadow:
+        0 0 0 4px rgba(37, 99, 166, 0.10);
+
+}
+
+
+/* =========================================================
+   PASSWORD SHOW/HIDE
+   ========================================================= */
+
+.password-toggle {
+
+    position: absolute;
+
+    right: 12px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 34px;
+
+    height: 34px;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    border-radius: 7px;
+
+}
+
+
+.password-toggle:hover {
+
+    background: #eef3f8;
+
+}
+
+
+/* =========================================================
+   LOGIN BUTTON
+   ========================================================= */
+
+.admin-login-button {
+
+    width: 100%;
+
+    height: 52px;
+
+    margin-top: 6px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #123d69,
+            #2563a6
+        );
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+
+    box-shadow:
+        0 8px 18px rgba(18, 61, 105, 0.25);
+
+}
+
+
+.admin-login-button:hover {
+
+    transform: translateY(-2px);
+
+    background:
+        linear-gradient(
+            135deg,
+            #0d3156,
+            #1f568d
+        );
+
+    box-shadow:
+        0 12px 24px rgba(18, 61, 105, 0.30);
+
+}
+
+
+.admin-login-button:active {
+
+    transform: translateY(0);
+
+}
+
+
+/* =========================================================
+   SECURITY MESSAGE
+   ========================================================= */
+
+.admin-security {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    margin-top: 20px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid #edf0f4;
+
+    color: #7a8797;
+
+    font-size: 12px;
+
+    text-align: center;
+
+}
+
+
+.admin-security span {
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================================
+   BACK LINK
+   ========================================================= */
+
+.admin-back-link {
+
+    display: block;
+
+    text-align: center;
+
+    margin-top: 23px;
+
+    color: #b27b1e;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+
+}
+
+
+.admin-back-link:hover {
+
+    color: #8e6114;
+
+    text-decoration: underline;
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .admin-login-page {
+
+        padding: 35px 15px;
+
+        background-attachment: scroll;
+
+    }
+
+
+    .admin-login-card {
+
+        padding: 35px 24px;
+
+        border-radius: 16px;
+
+    }
+
+
+    .admin-login-card h1 {
+
+        font-size: 28px;
+
+    }
+
+
+    .college-label {
+
+        font-size: 11px;
+
+        letter-spacing: 1.5px;
+
+    }
+
+}
+
+</style>
+
+
+<section class="admin-login-page">
+
+
+    <div class="admin-login-card">
+
+
+        <!-- TOP DECORATION -->
+
+        <div class="admin-login-top-line"></div>
+
+
+        <!-- HEADER -->
+
+        <div class="admin-login-header">
+
+            <div class="admin-icon">
+                🔐
+            </div>
+
+            <div class="college-label">
+                GREENFIELD NATIONAL COLLEGE
+            </div>
+
+            <h1>
+                Admin Login
+            </h1>
+
+            <p class="login-description">
+                Sign in to securely manage the
+                Student Helpdesk System.
+            </p>
+
+        </div>
+
+
+        <!-- LOGIN FORM -->
+
+        <form method="POST">
+
+
+            <!-- USERNAME -->
+
+            <div class="admin-form-group">
+
+                <label for="username">
+                    Username
+                </label>
+
+                <div class="admin-input-wrapper">
+
+                    <span class="admin-input-icon">
+                        👤
+                    </span>
+
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="Enter your username"
+                        autocomplete="username"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- PASSWORD -->
+
+            <div class="admin-form-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <div class="admin-input-wrapper">
+
+                    <span class="admin-input-icon">
+                        🔑
+                    </span>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="password-toggle"
+                        onclick="toggleAdminPassword()"
+                        aria-label="Show or hide password"
+                    >
+                        👁️
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- LOGIN BUTTON -->
+
+            <button
+                type="submit"
+                class="admin-login-button"
+            >
+
+                🔐
+                &nbsp;
+                Admin Login
+
+            </button>
+
+
+        </form>
+
+
+        <!-- SECURITY -->
+
+        <div class="admin-security">
+
+            <span>
+                🔒
+            </span>
+
+            <span>
+                Secure administrator access
+            </span>
+
+        </div>
+
+
+        <!-- BACK LINK -->
+
+        <a
+            href="{{ url_for('home') }}"
+            class="admin-back-link"
+        >
+            ← Back to College Website
+        </a>
+
+
+    </div>
+
+
+</section>
+
+
+<script>
+
+function toggleAdminPassword() {
+
+    const password =
+        document.getElementById("password");
+
+    const button =
+        document.querySelector(".password-toggle");
+
+
+    if (password.type === "password") {
+
+        password.type = "text";
+
+        button.textContent = "🙈";
+
+    } else {
+
+        password.type = "password";
+
+        button.textContent = "👁️";
+
+    }
+
+}
+
+</script>
+
+
+{% endblock %}
