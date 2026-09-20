@@ -1,0 +1,111 @@
+question,intent
+What is the BCA fee?,bca_fee
+How much does BCA cost?,bca_fee
+What is the fee for BCA?,bca_fee
+How much is the BCA tuition fee?,bca_fee
+Tell me the BCA fee,bca_fee
+What is the cost of studying BCA?,bca_fee
+How much do I have to pay for BCA?,bca_fee
+What is the semester fee for BCA?,bca_fee
+How much is one semester of BCA?,bca_fee
+What is the total BCA fee?,bca_fee
+How long is BCA?,bca_duration
+How many years is BCA?,bca_duration
+What is the duration of BCA?,bca_duration
+How many semesters are in BCA?,bca_duration
+How long does the BCA course take?,bca_duration
+How many years do I study BCA?,bca_duration
+How many semesters does BCA have?,bca_duration
+What is the length of the BCA program?,bca_duration
+Tell me about BCA duration,bca_duration
+When does BCA finish?,bca_duration
+What subjects are in BCA?,bca_subjects
+Tell me about BCA subjects,bca_subjects
+What are the subjects of BCA?,bca_subjects
+Which subjects are taught in BCA?,bca_subjects
+Give me the BCA syllabus,bca_subjects
+What do students study in BCA?,bca_subjects
+Tell me about the BCA course subjects,bca_subjects
+Which subjects are there in BCA?,bca_subjects
+What is included in the BCA syllabus?,bca_subjects
+I want to know BCA subjects,bca_subjects
+What is a semester?,semester_info
+How long is one semester?,semester_info
+How many months is a semester?,semester_info
+Tell me about semesters,semester_info
+What does semester mean?,semester_info
+How many months does each semester have?,semester_info
+What is the semester system?,semester_info
+Tell me about the academic semester,semester_info
+How many semesters are there in the course?,semester_info
+What is the duration of one semester?,semester_info
+I need help,admin_support
+I need administrative help,admin_support
+How can I contact administration?,admin_support
+I want to contact the admin,admin_support
+How can I get administrative assistance?,admin_support
+Where can I get help from administration?,admin_support
+I have an administrative problem,admin_support
+I need support from the administration,admin_support
+Can the admin help me?,admin_support
+I want administrative assistance,admin_support
+How do I create a ticket?,ticket_help
+I want to create a ticket,ticket_help
+How can I submit a helpdesk ticket?,ticket_help
+Where can I create a support ticket?,ticket_help
+I need to submit a ticket,ticket_help
+How do I contact support through a ticket?,ticket_help
+I want to report a problem,ticket_help
+How can I send a helpdesk request?,ticket_help
+How do I submit a support request?,ticket_help
+I need to open a ticket,ticket_help
+How can I login?,login_help
+How do I login?,login_help
+I cannot login,login_help
+I am unable to login,login_help
+How do I access my account?,login_help
+Where is the login page?,login_help
+Why can't I login?,login_help
+Help me login,login_help
+How can I access the system?,login_help
+I forgot how to login,login_help
+What is a chatbot?,chatbot_info
+What can the chatbot do?,chatbot_info
+How does the chatbot work?,chatbot_info
+Tell me about the chatbot,chatbot_info
+What can I ask the chatbot?,chatbot_info
+Can the chatbot answer questions?,chatbot_info
+How does the student chatbot help?,chatbot_info
+What is this chatbot for?,chatbot_info
+What questions can I ask?,chatbot_info
+How can I use the chatbot?,chatbot_info
+Hello, greeting
+Hi, greeting
+Hey, greeting
+Good morning,greeting
+Good afternoon,greeting
+Good evening,greeting
+Hello chatbot,greeting
+Hi there,greeting
+Hey chatbot,greeting
+Greetings,greeting
+Thank you,thanks
+Thanks,thanks
+Thank you very much,thanks
+Thanks for your help,thanks
+I appreciate your help,thanks
+Thank you chatbot,thanks
+That was helpful,thanks
+Thanks a lot,thanks
+I am grateful,thanks
+Okay thank you,thanks
+What is Python?,programming
+What is Java?,programming
+What is programming?,programming
+Explain programming,programming
+What is HTML?,programming
+What is CSS?,programming
+What is JavaScript?,programming
+What is Flask?,programming
+What is a database?,programming
+What is Python used for?,programming

@@ -1071,7 +1071,207 @@ Admin Dashboard | Greenfield National College
 
         </div>
 
+        <!-- =========================================================
+     ML TICKET CLUSTERING
+========================================================= -->
 
+<section class="dashboard-section ml-clustering-section">
+
+    <div class="section-header">
+        <div>
+            <h2>🤖 ML Ticket Clustering</h2>
+            <p>
+                Machine Learning automatically groups similar
+                student helpdesk issues.
+            </p>
+        </div>
+    </div>
+
+    {% if cluster_data and cluster_data.total_tickets > 1 %}
+
+        <!-- ML SUMMARY -->
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+                <div class="stat-icon">🎫</div>
+
+                <div>
+                    <h3>{{ cluster_data.total_tickets }}</h3>
+                    <p>Total Tickets Analyzed</p>
+                </div>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="stat-icon">🧠</div>
+
+                <div>
+                    <h3>{{ cluster_data.number_of_clusters }}</h3>
+                    <p>Automatically Detected Groups</p>
+                </div>
+            </div>
+
+
+            {% if cluster_data.largest_cluster %}
+
+            <div class="stat-card">
+
+                <div class="stat-icon">🔥</div>
+
+                <div>
+
+                    <h3>
+                        {{ cluster_data.largest_cluster.count }}
+                    </h3>
+
+                    <p>
+                        Most Reported Issue
+                    </p>
+
+                </div>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+
+        <!-- CLUSTER RESULTS -->
+
+        <div class="ticket-clustering-results">
+
+            <h3>📊 Student Issue Groups</h3>
+
+            <p class="clustering-description">
+                The system uses K-Means clustering to group
+                similar ticket subjects and descriptions.
+            </p>
+
+
+            <div class="cluster-list">
+
+                {% for cluster in cluster_data.clusters %}
+
+                <div class="cluster-card">
+
+                    <div class="cluster-number">
+                        <span>
+                            Group {{ cluster.cluster_number }}
+                        </span>
+                    </div>
+
+
+                    <div class="cluster-information">
+
+                        <h4>
+                            {{ cluster.subject }}
+                        </h4>
+
+                        <p>
+                            {{ cluster.count }}
+                            student ticket{% if cluster.count != 1 %}s{% endif %}
+                        </p>
+
+                    </div>
+
+
+                    {% if loop.first %}
+
+                    <div class="most-reported-badge">
+                        🔥 Most Reported
+                    </div>
+
+                    {% endif %}
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+
+        <!-- MOST REPORTED ISSUE -->
+
+        {% if cluster_data.largest_cluster %}
+
+        <div class="most-reported-box">
+
+            <div class="most-reported-icon">
+                🔥
+            </div>
+
+            <div>
+
+                <h3>
+                    Most Reported Student Issue
+                </h3>
+
+                <p>
+
+                    <strong>
+                        {{ cluster_data.largest_cluster.subject }}
+                    </strong>
+
+                    was the largest automatically detected
+                    issue group with
+
+                    <strong>
+                        {{ cluster_data.largest_cluster.count }}
+                    </strong>
+
+                    ticket{% if cluster_data.largest_cluster.count != 1 %}s{% endif %}.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        {% endif %}
+
+
+    {% elif cluster_data and cluster_data.total_tickets == 1 %}
+
+        <div class="empty-clustering">
+
+            <div class="empty-icon">
+                📊
+            </div>
+
+            <h3>Not Enough Tickets for Clustering</h3>
+
+            <p>
+                At least 2 student tickets are required
+                before the ML system can create issue groups.
+            </p>
+
+        </div>
+
+
+    {% else %}
+
+        <div class="empty-clustering">
+
+            <div class="empty-icon">
+                📊
+            </div>
+
+            <h3>No Tickets Available</h3>
+
+            <p>
+                Student ticket data will appear here
+                when tickets are submitted.
+            </p>
+
+        </div>
+
+    {% endif %}
+
+</section>
 
         <!-- =================================================
              STUDENT TICKETS

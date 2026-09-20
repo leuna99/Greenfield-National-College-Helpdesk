@@ -1,0 +1,294 @@
+question,intent
+What is the BCA fee?,bca_fee
+How much does BCA cost?,bca_fee
+What is the fee for BCA?,bca_fee
+How much is the BCA tuition fee?,bca_fee
+Tell me the BCA fee,bca_fee
+What is the cost of studying BCA?,bca_fee
+How much do I have to pay for BCA?,bca_fee
+What is the semester fee for BCA?,bca_fee
+How much is one semester of BCA?,bca_fee
+What is the total BCA fee?,bca_fee
+How long is BCA?,bca_duration
+How many years is BCA?,bca_duration
+What is the duration of BCA?,bca_duration
+How many semesters are in BCA?,bca_duration
+How long does the BCA course take?,bca_duration
+How many years do I study BCA?,bca_duration
+How many semesters does BCA have?,bca_duration
+What is the length of the BCA program?,bca_duration
+Tell me about BCA duration,bca_duration
+When does BCA finish?,bca_duration
+What subjects are in BCA?,bca_subjects
+Tell me about BCA subjects,bca_subjects
+What are the subjects of BCA?,bca_subjects
+Which subjects are taught in BCA?,bca_subjects
+Give me the BCA syllabus,bca_subjects
+What do students study in BCA?,bca_subjects
+Tell me about the BCA course subjects,bca_subjects
+Which subjects are there in BCA?,bca_subjects
+What is included in the BCA syllabus?,bca_subjects
+I want to know BCA subjects,bca_subjects
+What is a semester?,semester_info
+How long is one semester?,semester_info
+How many months is a semester?,semester_info
+Tell me about semesters,semester_info
+What does semester mean?,semester_info
+How many months does each semester have?,semester_info
+What is the semester system?,semester_info
+Tell me about the academic semester,semester_info
+How many semesters are there in the course?,semester_info
+What is the duration of one semester?,semester_info
+I need help,admin_support
+I need administrative help,admin_support
+How can I contact administration?,admin_support
+I want to contact the admin,admin_support
+How can I get administrative assistance?,admin_support
+Where can I get help from administration?,admin_support
+I have an administrative problem,admin_support
+I need support from the administration,admin_support
+Can the admin help me?,admin_support
+I want administrative assistance,admin_support
+How do I create a ticket?,ticket_help
+I want to create a ticket,ticket_help
+How can I submit a helpdesk ticket?,ticket_help
+Where can I create a support ticket?,ticket_help
+I need to submit a ticket,ticket_help
+How do I contact support through a ticket?,ticket_help
+I want to report a problem,ticket_help
+How can I send a helpdesk request?,ticket_help
+How do I submit a support request?,ticket_help
+I need to open a ticket,ticket_help
+How can I login?,login_help
+How do I login?,login_help
+I cannot login,login_help
+I am unable to login,login_help
+How do I access my account?,login_help
+Where is the login page?,login_help
+Why can't I login?,login_help
+Help me login,login_help
+How can I access the system?,login_help
+I forgot how to login,login_help
+What is a chatbot?,chatbot_info
+What can the chatbot do?,chatbot_info
+How does the chatbot work?,chatbot_info
+Tell me about the chatbot,chatbot_info
+What can I ask the chatbot?,chatbot_info
+Can the chatbot answer questions?,chatbot_info
+How does the student chatbot help?,chatbot_info
+What is this chatbot for?,chatbot_info
+What questions can I ask?,chatbot_info
+How can I use the chatbot?,chatbot_info
+Hello, greeting
+Hi, greeting
+Hey, greeting
+Good morning,greeting
+Good afternoon,greeting
+Good evening,greeting
+Hello chatbot,greeting
+Hi there,greeting
+Hey chatbot,greeting
+Greetings,greeting
+Thank you,thanks
+Thanks,thanks
+Thank you very much,thanks
+Thanks for your help,thanks
+I appreciate your help,thanks
+Thank you chatbot,thanks
+That was helpful,thanks
+Thanks a lot,thanks
+I am grateful,thanks
+Okay thank you,thanks
+What is Python?,programming
+What is Java?,programming
+What is programming?,programming
+Explain programming,programming
+What is HTML?,programming
+What is CSS?,programming
+What is JavaScript?,programming
+What is Flask?,programming
+What is a database?,programming
+What is Python used for?,programming
+What are the subjects in BCA first semester?,semester_1_subjects
+What are the subjects in BCA 1st semester?,semester_1_subjects
+Tell me the first semester BCA subjects,semester_1_subjects
+What do we study in BCA first semester?,semester_1_subjects
+Show me BCA semester 1 subjects,semester_1_subjects
+What subjects are taught in first semester?,semester_1_subjects
+
+What are the subjects in BCA second semester?,semester_2_subjects
+What are the subjects in BCA 2nd semester?,semester_2_subjects
+Tell me the second semester BCA subjects,semester_2_subjects
+What do we study in BCA second semester?,semester_2_subjects
+Show me BCA semester 2 subjects,semester_2_subjects
+What subjects are taught in second semester?,semester_2_subjects
+
+What are the subjects in BCA third semester?,semester_3_subjects
+What are the subjects in BCA 3rd semester?,semester_3_subjects
+Tell me the third semester BCA subjects,semester_3_subjects
+What do we study in BCA third semester?,semester_3_subjects
+Show me BCA semester 3 subjects,semester_3_subjects
+What subjects are taught in third semester?,semester_3_subjects
+
+What are the subjects in BCA fourth semester?,semester_4_subjects
+What are the subjects in BCA 4th semester?,semester_4_subjects
+Tell me the fourth semester BCA subjects,semester_4_subjects
+What do we study in BCA fourth semester?,semester_4_subjects
+Show me BCA semester 4 subjects,semester_4_subjects
+What subjects are taught in fourth semester?,semester_4_subjects
+
+What are the subjects in BCA fifth semester?,semester_5_subjects
+What are the subjects in BCA 5th semester?,semester_5_subjects
+Tell me the fifth semester BCA subjects,semester_5_subjects
+What do we study in BCA fifth semester?,semester_5_subjects
+Show me BCA semester 5 subjects,semester_5_subjects
+What subjects are taught in fifth semester?,semester_5_subjects
+
+What are the subjects in BCA sixth semester?,semester_6_subjects
+What are the subjects in BCA 6th semester?,semester_6_subjects
+Tell me the sixth semester BCA subjects,semester_6_subjects
+What do we study in BCA sixth semester?,semester_6_subjects
+Show me BCA semester 6 subjects,semester_6_subjects
+What subjects are taught in sixth semester?,semester_6_subjects
+
+What are the subjects in BCA seventh semester?,semester_7_subjects
+What are the subjects in BCA 7th semester?,semester_7_subjects
+Tell me the seventh semester BCA subjects,semester_7_subjects
+What do we study in BCA seventh semester?,semester_7_subjects
+Show me BCA semester 7 subjects,semester_7_subjects
+What subjects are taught in seventh semester?,semester_7_subjects
+
+What are the subjects in BCA eighth semester?,semester_8_subjects
+What are the subjects in BCA 8th semester?,semester_8_subjects
+Tell me the eighth semester BCA subjects,semester_8_subjects
+What do we study in BCA eighth semester?,semester_8_subjects
+Show me BCA semester 8 subjects,semester_8_subjects
+What subjects are taught in eighth semester?,semester_8_subjects
+
+Tell me all BCA semester subjects,all_bca_subjects
+Tell me all subjects of BCA,all_bca_subjects
+Show me the complete BCA subjects,all_bca_subjects
+What are all the subjects in BCA?,all_bca_subjects
+Give me the complete BCA course subjects,all_bca_subjects
+Show me the BCA semester wise subjects,all_bca_subjects
+
+1st semester subjects,semester_1_subjects
+1st sem subjects,semester_1_subjects
+1st sem subject,semester_1_subjects
+first semester subjects,semester_1_subjects
+first sem subjects,semester_1_subjects
+What subject is in 1st semester?,semester_1_subjects
+What are the subjects in 1st semester?,semester_1_subjects
+What are the subjects in first semester?,semester_1_subjects
+BCA 1st semester subjects,semester_1_subjects
+BCA sem 1 subjects,semester_1_subjects
+Tell me about first sem,semester_1_subjects
+Tell me 1st semester subjects,semester_1_subjects
+Whats the 1st semester subject?,semester_1_subjects
+whats the 1th semester subject?,semester_1_subjects
+What do we study in first semester?,semester_1_subjects
+
+2nd semester subjects,semester_2_subjects
+2nd sem subjects,semester_2_subjects
+2nd sem subject,semester_2_subjects
+second semester subjects,semester_2_subjects
+second sem subjects,semester_2_subjects
+What subject is in 2nd semester?,semester_2_subjects
+What are the subjects in 2nd semester?,semester_2_subjects
+What are the subjects in second semester?,semester_2_subjects
+BCA 2nd semester subjects,semester_2_subjects
+BCA sem 2 subjects,semester_2_subjects
+Tell me about second sem,semester_2_subjects
+Tell me 2nd semester subjects,semester_2_subjects
+Whats the 2nd semester subject?,semester_2_subjects
+What do we study in second semester?,semester_2_subjects
+
+3rd semester subjects,semester_3_subjects
+3rd sem subjects,semester_3_subjects
+3rd sem subject,semester_3_subjects
+third semester subjects,semester_3_subjects
+third sem subjects,semester_3_subjects
+What subject is in 3rd semester?,semester_3_subjects
+What are the subjects in 3rd semester?,semester_3_subjects
+What are the subjects in third semester?,semester_3_subjects
+BCA 3rd semester subjects,semester_3_subjects
+BCA sem 3 subjects,semester_3_subjects
+Tell me about third sem,semester_3_subjects
+Tell me 3rd semester subjects,semester_3_subjects
+Whats the 3rd semester subject?,semester_3_subjects
+What do we study in third semester?,semester_3_subjects
+
+4th semester subjects,semester_4_subjects
+4th sem subjects,semester_4_subjects
+4th sem subject,semester_4_subjects
+fourth semester subjects,semester_4_subjects
+fourth sem subjects,semester_4_subjects
+What subject is in 4th semester?,semester_4_subjects
+What are the subjects in 4th semester?,semester_4_subjects
+What are the subjects in fourth semester?,semester_4_subjects
+BCA 4th semester subjects,semester_4_subjects
+BCA sem 4 subjects,semester_4_subjects
+Tell me about fourth sem,semester_4_subjects
+Tell me 4th semester subjects,semester_4_subjects
+Whats the 4th semester subject?,semester_4_subjects
+What do we study in fourth semester?,semester_4_subjects
+
+5th semester subjects,semester_5_subjects
+5th sem subjects,semester_5_subjects
+5th sem subject,semester_5_subjects
+fifth semester subjects,semester_5_subjects
+fifth sem subjects,semester_5_subjects
+What subject is in 5th semester?,semester_5_subjects
+What are the subjects in 5th semester?,semester_5_subjects
+What are the subjects in fifth semester?,semester_5_subjects
+BCA 5th semester subjects,semester_5_subjects
+BCA sem 5 subjects,semester_5_subjects
+Tell me about fifth sem,semester_5_subjects
+Tell me 5th semester subjects,semester_5_subjects
+Whats the 5th semester subject?,semester_5_subjects
+What do we study in fifth semester?,semester_5_subjects
+
+6th semester subjects,semester_6_subjects
+6th sem subjects,semester_6_subjects
+6th sem subject,semester_6_subjects
+sixth semester subjects,semester_6_subjects
+sixth sem subjects,semester_6_subjects
+What subject is in 6th semester?,semester_6_subjects
+What are the subjects in 6th semester?,semester_6_subjects
+What are the subjects in sixth semester?,semester_6_subjects
+BCA 6th semester subjects,semester_6_subjects
+BCA sem 6 subjects,semester_6_subjects
+Tell me about sixth sem,semester_6_subjects
+Tell me 6th semester subjects,semester_6_subjects
+Whats the 6th semester subject?,semester_6_subjects
+What do we study in sixth semester?,semester_6_subjects
+
+7th semester subjects,semester_7_subjects
+7th sem subjects,semester_7_subjects
+7th sem subject,semester_7_subjects
+seventh semester subjects,semester_7_subjects
+seventh sem subjects,semester_7_subjects
+What subject is in 7th semester?,semester_7_subjects
+What are the subjects in 7th semester?,semester_7_subjects
+What are the subjects in seventh semester?,semester_7_subjects
+BCA 7th semester subjects,semester_7_subjects
+BCA sem 7 subjects,semester_7_subjects
+Tell me about seventh sem,semester_7_subjects
+Tell me 7th semester subjects,semester_7_subjects
+Whats the 7th semester subject?,semester_7_subjects
+What do we study in seventh semester?,semester_7_subjects
+
+8th semester subjects,semester_8_subjects
+8th sem subjects,semester_8_subjects
+8th sem subject,semester_8_subjects
+eighth semester subjects,semester_8_subjects
+eighth sem subjects,semester_8_subjects
+What subject is in 8th semester?,semester_8_subjects
+What are the subjects in 8th semester?,semester_8_subjects
+What are the subjects in eighth semester?,semester_8_subjects
+BCA 8th semester subjects,semester_8_subjects
+BCA sem 8 subjects,semester_8_subjects
+Tell me about eighth sem,semester_8_subjects
+Tell me 8th semester subjects,semester_8_subjects
+Whats the 8th semester subject?,semester_8_subjects
+What do we study in eighth semester?,semester_8_subjects
